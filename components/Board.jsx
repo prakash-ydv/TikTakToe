@@ -41,6 +41,7 @@ function Board() {
         }
 
         resetBoard();
+        break;
       } else if (state.every((cell) => cell !== null)) {
         setTimeout(() => setState(Array(9).fill(null)), 1500);
       }
