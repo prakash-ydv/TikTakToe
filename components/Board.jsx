@@ -97,82 +97,53 @@ function Board() {
       {/* main game board */}
       <div className="main-board">
         <div className="flex">
-          <Square
-            value={state[0]}
-            clickHandler={() => clickHandler(0)}
-            isWinningCell={winningCells.includes(0)}
-            winner={winner}
-          />
-          <Square
-            value={state[1]}
-            clickHandler={() => clickHandler(1)}
-            isWinningCell={winningCells.includes(1)}
-            winner={winner}
-          />
-          <Square
-            value={state[2]}
-            clickHandler={() => clickHandler(2)}
-            isWinningCell={winningCells.includes(2)}
-            winner={winner}
-          />
+          {[0, 1, 2].map((element, key) => (
+            <Square
+              key={key}
+              value={state[element]}
+              clickHandler={() => clickHandler(element)}
+              isWinningCell={winningCells.includes(element)}
+              winner={winner}
+            />
+          ))}
         </div>
         <div className="flex">
-          <Square
-            value={state[3]}
-            clickHandler={() => clickHandler(3)}
-            isWinningCell={winningCells.includes(3)}
-            winner={winner}
-          />
-          <Square
-            value={state[4]}
-            clickHandler={() => clickHandler(4)}
-            isWinningCell={winningCells.includes(4)}
-            winner={winner}
-          />
-          <Square
-            value={state[5]}
-            clickHandler={() => clickHandler(5)}
-            isWinningCell={winningCells.includes(5)}
-            winner={winner}
-          />
+          {[3, 4, 5].map((element, key) => (
+            <Square
+              key={key}
+              value={state[element]}
+              clickHandler={() => clickHandler(element)}
+              isWinningCell={winningCells.includes(element)}
+              winner={winner}
+            />
+          ))}
         </div>
         <div className="flex">
-          <Square
-            value={state[6]}
-            clickHandler={() => clickHandler(6)}
-            isWinningCell={winningCells.includes(6)}
-            winner={winner}
-          />
-          <Square
-            value={state[7]}
-            clickHandler={() => clickHandler(7)}
-            isWinningCell={winningCells.includes(7)}
-            winner={winner}
-          />
-          <Square
-            value={state[8]}
-            clickHandler={() => clickHandler(8)}
-            isWinningCell={winningCells.includes(8)}
-            winner={winner}
-          />
+          {[6, 7, 8].map((element, key) => (
+            <Square
+              key={key}
+              value={state[element]}
+              clickHandler={() => clickHandler(element)}
+              isWinningCell={winningCells.includes(element)}
+              winner={winner}
+            />
+          ))}
         </div>
 
         <div className="buttons hidden sm:flex mt-15 justify-evenly w-full px-10">
-        <button
-          onClick={resetScore}
-          className="bg-green-500 px-2 py-1 rounded-md font-semibold"
-        >
-          Reset Score
-        </button>
-        <button
-          onClick={()=>resetBoard(0)}
-          className="bg-red-500 px-2 py-1 rounded-md font-semibold"
-        >
-          Reset Board
-        </button>
-      </div>
-
-
+          <button
+            onClick={resetScore}
+            className="bg-green-500 px-2 py-1 rounded-md font-semibold"
+          >
+            Reset Score
+          </button>
+          <button
+            onClick={() => resetBoard(0)}
+            className="bg-red-500 px-2 py-1 rounded-md font-semibold"
+          >
+            Reset Board
+          </button>
+        </div>
       </div>
 
       {/* Player O Infos */}
@@ -190,13 +161,13 @@ function Board() {
       <div className="buttons sm:hidden flex justify-evenly w-full px-10">
         <button
           onClick={resetScore}
-          className="bg-green-500 px-2 py-1 rounded-md font-semibold"
+          className="bg-green-500 px-2 py-1 rounded-md font-semibold cursor-pointer"
         >
           Reset Score
         </button>
         <button
-          onClick={()=>resetBoard(0)}
-          className="bg-red-500 px-2 py-1 rounded-md font-semibold"
+          onClick={() => resetBoard(0)}
+          className="bg-red-500 px-2 py-1 rounded-md font-semibold cursor-pointer"
         >
           Reset Board
         </button>
