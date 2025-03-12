@@ -36,7 +36,7 @@ function Board() {
         // increment score
         if (state[a] == "X") {
           setPlayerXScore((prev) => prev + 1);
-        } else {
+        } else if (state[a] == "O") {
           setPlayerOScore((prev) => prev + 1);
         }
 
